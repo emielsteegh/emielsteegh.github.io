@@ -2,23 +2,27 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: A few bits of me in an ocean of bytes.
 
 profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Emiel Steegh</p>
+    <p>Amsterdam, NL</p>
 
 news: true  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: !$page.hide_publications # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
+***
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Currently I am a Master's student in Data Science at the [University of Amsterdam](https://www.uva.nl/) working with AI in the field of NLP and active learning. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I was born in a rural part of Limburg, passionate about data, NLP, creativity, programming, fairness and complex problems.
+I recently graduated from the Bachelor Creative Technology at the [University of Twente](https://www.utwente.nl/), where I learned all about rapid prototyping and bridging the gap between engineering, business and the real world.
+During my time there I took a full time year to be secretary of the board of [Study Association Proto](https://www.proto.utwente.nl/page/oldfarts#board8).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I run my own small business, I have worked as a freelancer, back-end developer, and most proudly as teaching assistant (I love to share knowledge)!
+
+If you want to have a chat, coffee, beer or whisky you can reach through any of the icons below!
