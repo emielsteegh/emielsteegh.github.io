@@ -25,16 +25,31 @@
           <div class="collapse navbar-collapse text-right" id="navbarNav">
             <ul class="navbar-nav ml-auto flex-nowrap">
 
-              <!-- About -->
+              <!-- ABOUT -->
               <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
-                <a class="nav-link" href="{{ '/' | relative_url }}">about
-                  {%- if page.title == "about" -%}
-                  <span class="sr-only">(current)</span>
-                  {%- endif -%}
-                </a>
-              </li>
-              {% if site.blog_name %}
+                  <a class="nav-link" href="{{ '/' | relative_url }}">about
+                    {%- if page.title == about -%}
+                    <span class="sr-only">(current)</span>
+                    {%- endif -%}
+                  </a>
+                </li>
+
+              {% assign ordered_pages = "resume, teaching, projects" | split: ", " %}
+
+              {% for pg in ordered_pages  %}
+                <li class="nav-item {% if page.title == pg %}active{% endif %}">
+                  <a class="nav-link" href="/{{  pg }}/">{{ pg }}
+                    {%- if page.title == pg -%}
+                    <span class="sr-only">(current)</span>
+                    {%- endif -%}
+                  </a>
+                </li>
+              {% endfor %}
+
+
+
               <!-- Blog -->
+              {%- if page.blog_name -%}
               <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
                 <a class="nav-link" href="{{ '/blog/' | relative_url }}">blog
                   {%- if page.title == "blog" -%}
@@ -47,34 +62,41 @@
               <!-- Other pages -->
               {%- assign sorted_pages = site.pages | sort: "title" -%}
               {%- for p in sorted_pages -%}
-              {%- if p.nav and p.autogen == nil -%}
-              {%- if p.dropdown %}
-              <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ p.title }}
-                  {%- if page.title == p.title -%}
-                  <span class="sr-only">(current)</span>
-                  {%- endif -%}
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  {%- for child in p.children -%}
-                  {%- if child.title == 'divider' %}
-                  <div class="dropdown-divider"></div>
+              {%- unless ordered_pages contains p.title -%}
+                {%- if p.nav and p.autogen == nil -%}
+                  {%- if p.dropdown %}
+                  <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ p.title }}
+                      {%- if page.title == p.title -%}
+                      <span class="sr-only">(current)</span>
+                      {%- endif -%}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      {%- for child in p.children -%}
+                        {%- if child.title == 'divider' %}
+                          <div class="dropdown-divider"></div>
+                        {%- else %}
+                          {% if child.permalink %}
+                            <a class="dropdown-item" href="{{ child.permalink | relative_url }}">{{ child.title }}</a>
+                          {% elsif child.outlink%}
+                            <a class="dropdown-item" href="{{ child.outlink | relative_url }}">{{ child.title }}</a>
+                          {% endif %}
+
+                        {%- endif -%}
+                      {% endfor %}
+                    </div>
+                  </li>
                   {%- else %}
-                  <a class="dropdown-item" href="{{ child.permalink | relative_url }}">{{ child.title }}</a>
+                  <li class="nav-item {% if page.title == p.title %}active{% endif %}">
+                    <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
+                      {%- if page.title == p.title -%}
+                      <span class="sr-only">(current)</span>
+                      {%- endif -%}
+                    </a>
+                  </li>
                   {%- endif -%}
-                  {% endfor %}
-                </div>
-              </li>
-              {%- else %}
-              <li class="nav-item {% if page.title == p.title %}active{% endif %}">
-                <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
-                  {%- if page.title == p.title -%}
-                  <span class="sr-only">(current)</span>
-                  {%- endif -%}
-                </a>
-              </li>
-              {%- endif -%}
-              {%- endif -%}
+                {%- endif -%}
+              {%- endunless -%}
               {% endfor -%}
               {%- if site.enable_darkmode %}
 
