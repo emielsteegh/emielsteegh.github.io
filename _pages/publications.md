@@ -9,9 +9,13 @@ nav: !$page.hide_publications
 <!-- _pages/publications.md -->
 <div class="publications">
 
-{%- for y in page.years %}
-  <h2 class="year">{{y}}</h2>
-  {% page.bibliography -f papers -q @*[year={{y}}]* %}
-{% endfor %}
+[//]: # (This page is broken :( )
+[//]: # ({%- for y in page.years %})
+
+[//]: # (  <h2 class="year">{{y}}</h2>)
+
+[//]: # (  {% page.bibliography -f papers -q @*[year={{y}}]* %})
+
+[//]: # ({% endfor %})
 
 </div>
