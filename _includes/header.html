@@ -38,7 +38,8 @@
                   </a>
                 </li>
 
-              {% assign ordered_pages = "resume, teaching, projects" | split: ", " %}
+<!--              {% assign ordered_pages = "resume, teaching, projects" | split: ", " %}-->
+              {% assign ordered_pages = "resume, teaching" | split: ", " %}
 
               {% for pg in ordered_pages  %}
                 <li class="nav-item {% if page.title == pg %}active{% endif %}">
@@ -64,7 +65,7 @@
               {%- endif %}
 
               <!-- Other pages -->
-              {%- assign sorted_pages = site.pages | sort: "title" -%}
+              {%- assign sorted_pages = site.pages | sort: "title"-%}
               {%- for p in sorted_pages -%}
               {%- unless ordered_pages contains p.title -%}
                 {%- if p.nav and p.autogen == nil -%}
