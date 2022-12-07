@@ -25,4 +25,4 @@ During my time there I took a full-time year to be secretary of the board of [St
 
 I run my own small business, I have worked as a freelancer, back-end developer, and most proudly as [teaching assistant](/teaching/); I love to share knowledge!
 
-If you want to have a chat, coffee, beer or whisky you can reach through any of the icons below!
+If you want to have a chat, coffee, beer or whisky you can reach through any of the icons at the bottom!
