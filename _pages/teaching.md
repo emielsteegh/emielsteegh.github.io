@@ -2,11 +2,9 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Courses I helped teach.
 nav: true
 ---
-
-
 
 I have been a teaching assistant during my Master's for the following Information Studies course at the _University of Amsterdam_:
 
@@ -21,4 +19,3 @@ And I was a teaching assistant for these courses while I was in my Bachelor's at
 - Algorithms for Creative Technology 201800975 (2018)
 
 For these courses I lead Q&A sessions and workcolleges, I participated in developping the courses, assisted during lectures and tutorials and was a proactive at helping students as I could be. The topics of these courses covered topics as programming, data structures, machine learning, electrical engineering, some calculus and statistics, and more. Other than this I coached a few students one-on-one.
-
